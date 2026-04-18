@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Section</title>
+    <style>
+        body { font-family: 'Pyidaungsu', sans-serif; background-color: #f0f2f5; text-align: center; margin: 0; padding: 20px; }
+        #member-content { display: none; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); max-width: 600px; margin: auto; }
+        h1 { color: #1a73e8; }
+        .lesson-item { padding: 15px; border-bottom: 1px solid #eee; text-align: left; }
+    </style>
+</head>
+<body>
+
+    <script>
+        // သင်တောင်းဆိုထားသော Password - 054540
+        var correctPassword = "054540"; 
+        
+        var userPass = prompt("Member သီးသန့် အခန်းဖြစ်ပါသဖြင့် Password ရိုက်ထည့်ပါ:");
+
+        if (userPass === correctPassword) {
+            alert("Password မှန်ကန်ပါသည်။ ဝင်ရောက်ခွင့်ပြုလိုက်ပါပြီ။");
+            window.onload = function() {
+                document.getElementById('member-content').style.display = 'block';
+            };
+        } else {
+            alert("Password မှားယွင်းနေပါသည်။");
+            window.location.href = "index.html"; 
+        }
+    </script>
+
+    <!-- သင်ခန်းစာ အကြောင်းအရာများကို ဒီအောက်မှာ ရေးထည့်ပါ -->
+    <div id="member-content">
+        <h1>Member သီးသန့် သင်ခန်းစာများ</h1>
+        <hr>
+        <div class="lesson-item">
+            <h3>သင်ခန်းစာ (၁)</h3>
+            <p>ဤနေရာတွင် သင့်၏ ပထမဆုံး သင်ခန်းစာ အကြောင်းအရာများကို ရေးသားနိုင်ပါသည်။</p>
+        </div>
+        <div class="lesson-item">
+            <h3>သင်ခန်းစာ (၂)</h3>
+            <p>ဤနေရာတွင် ဒုတိယ သင်ခန်းစာ အကြောင်းအရာများကို ရေးသားနိုင်ပါသည်။</p>
+        </div>
+        
+        <p style="margin-top: 20px; color: #666; font-size: 12px;">© 2024 Member Only Section</p>
+    </div>
+
+</body>
+</html>
