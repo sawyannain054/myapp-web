@@ -1,34 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="my">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Member Section</title>
+    <title>Member Lessons</title>
     <style>
-        body { font-family: sans-serif; text-align: center; background-color: #f4f4f4; margin: 0; padding: 20px; }
-        #content { display: none; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); max-width: 600px; margin: auto; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; margin: 0; padding: 0; }
+        .header { background: #1a73e8; color: white; padding: 20px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .container { padding: 15px; max-width: 600px; margin: auto; }
+        .card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 6px solid #1a73e8; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { margin-top: 0; color: #1a73e8; }
+        .card p { color: #555; line-height: 1.6; }
+        .btn { display: inline-block; background: #1a73e8; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-size: 14px; margin-top: 10px; }
     </style>
 </head>
 <body>
 
 <script>
-    // Password စနစ် (Page စဖွင့်တာနဲ့ တန်းတောင်းပါမယ်)
     var pass = prompt("Member Password ရိုက်ထည့်ပါ:");
-    if (pass == "054540") {
-        alert("ဝင်ရောက်ခွင့်ပြုလိုက်ပါပြီ");
-        window.onload = function() {
-            document.getElementById('content').style.display = 'block';
-        };
-    } else {
+    if (pass != "054540") {
         alert("Password မှားယွင်းနေပါသည်။");
         window.location.href = "index.html"; 
     }
 </script>
 
-<div id="content">
-    <h1>Member သီးသန့် သင်ခန်းစာများ</h1>
-    <hr>
-    <p>ဒီနေရာမှာ သင့်ရဲ့ Member တွေအတွက် သင်ခန်းစာတွေကို ရေးထည့်နိုင်ပါပြီ။</p>
+<div class="header">
+    <h2>Member သီးသန့် သင်ခန်းစာများ</h2>
+</div>
+
+<div class="container">
+    <!-- သင်ခန်းစာ (၁) -->
+    <div class="card">
+        <h3>📌 သင်ခန်းစာ (၁) - အခြေခံနည်းလမ်း</h3>
+        <p>ဤနေရာတွင် သင့်၏ သင်ခန်းစာ အကြောင်းအရာများကို အသေးစိတ် ရေးသားနိုင်ပါသည်။</p>
+        <a href="#" class="သင်္ကြန်လည်လို့ပြီးကြပြီလား🙄ပြီးကြပြီ‌ဆိုရင်သင်ခန်းစာ စသင်မယ်နော်">အသေးစိတ်ဖတ်ရန်</a>
+    </div>
+
+    <!-- သင်ခန်းစာ (၂) -->
+    <div class="card">
+        <h3>📌 သင်ခန်းစာ (၂) - အထူးဖော်မြူလာ</h3>
+        <p>ဒုတိယသင်ခန်းစာအတွက် ဗီဒီယို သို့မဟုတ် စာသားများကို ဤနေရာတွင် ထည့်သွင်းပါ။</p>
+        <a href="#" class="btn">ကြည့်ရှုရန်</a>
+    </div>
 </div>
 
 </body>
