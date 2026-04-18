@@ -6,76 +6,81 @@
     <title>အိပ်မက်အဘိဓာန် ၁၀၀၀</title>
     <style>
         body { font-family: sans-serif; background: #f4f7f6; margin: 0; padding: 0; }
-        .header { background: linear-gradient(135deg, #4b0082, #8a2be2); color: white; padding: 25px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        .search-container { position: sticky; top: 0; background: white; padding: 15px; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
-        input { width: 90%; padding: 12px 20px; border-radius: 25px; border: 2px solid #8a2be2; outline: none; font-size: 16px; }
+        .header { background: #4b0082; color: white; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; }
+        .search-container { background: white; padding: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+        input { width: 85%; padding: 10px; border-radius: 20px; border: 1px solid #4b0082; outline: none; }
         .container { padding: 15px; max-width: 600px; margin: auto; }
-        .alphabet-section { background: #8a2be2; color: white; padding: 5px 15px; border-radius: 5px; margin: 20px 0 10px 0; font-weight: bold; }
-        .dream-item { background: white; border-radius: 10px; padding: 15px; margin-bottom: 10px; border-left: 5px solid #8a2be2; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .dream-title { color: #4b0082; font-weight: bold; font-size: 18px; display: block; margin-bottom: 5px; }
-        .dream-text { color: #444; line-height: 1.6; }
-        .no-result { display: none; text-align: center; padding: 20px; color: #888; }
+        .dream-item { background: white; border-radius: 8px; padding: 15px; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-left: 5px solid #4b0082; }
+        .dream-title { color: #4b0082; font-weight: bold; display: block; margin-bottom: 5px; }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <h2 style="margin:0;">အိပ်မက်အဘိဓာန် ၁၀၀၀</h2>
-    <p style="font-size: 14px; margin-top: 5px;">မိမိမက်သော အိပ်မက်ကို ရှာဖွေပါ</p>
-</div>
-
-<div class="search-container">
-    <input type="text" id="searchBar" onkeyup="searchDream()" placeholder="ဥပမာ - မြွေ၊ ရေ၊ ပိုက်ဆံ...">
-</div>
+<div class="header"><h3>အိပ်မက်အဘိဓာန် ၁၀၀၀</h3></div>
+<div class="search-container"><input type="text" id="search" onkeyup="filterDreams()" placeholder="ရှာဖွေရန်..."></div>
 
 <div class="container" id="dreamContainer">
 
-    <!-- က-ပိုင်း -->
-    <div class="alphabet-section">က</div>
+    <!-- နမူနာ အိပ်မက်များ - ဒီပုံစံအတိုင်း အောက်မှာ ထပ်တိုးသွားပါ -->
     <div class="dream-item">
         <span class="dream-title">ကခုန်ခြင်း</span>
-        <span class="dream-text">အိပ်မက်ထဲတွင် မိမိကိုယ်တိုင် ကခုန်နေရပါက ဝမ်းသာစရာ သတင်းကောင်း ကြားရတတ်သည်။</span>
-    </div>
-    <div class="dream-item">
-        <span class="dream-title">ကျားမြင်မက်ခြင်း</span>
-        <span class="dream-text">ကျားမြင်မက်ပါက အာဏာရှိသူ သို့မဟုတ် အထက်လူကြီး၏ ကူညီမှုကို ရရှိတတ်သည်။</span>
+        <span>ဝမ်းသာစရာသတင်း ကြားရတတ်သည်။</span>
     </div>
 
-    <!-- ခ-ပိုင်း -->
-    <div class="alphabet-section">ခ</div>
+    <div class="dream-item">
+        <span class="dream-title">ကျားမြင်ခြင်း</span>
+        <span>အကြီးအကဲထံမှ အကူအညီရမည်။</span>
+    </div>
+
     <div class="dream-item">
         <span class="dream-title">ခွေးဟောင်ခြင်း</span>
-        <span class="dream-text">ခွေးဟောင်သည်ဟု မက်ပါက ရန်သူ သတိပြုရန် လိုအပ်သည်။</span>
+        <span>ရန်သူ သတိပြုပါ။</span>
     </div>
 
-    <!-- အသစ်ထပ်တိုးရန် ပုံစံ - ဒီနေရာမှာ စာသားတွေ ဖြည့်သွားပါ -->
+    <div class="dream-item">
+        <span class="dream-title">ငွေရခြင်း</span>
+        <span>လာဘ်ရွှင်မည်။</span>
+    </div>
+
+    <div class="dream-item">
+        <span class="dream-title">စက်လှေစီးခြင်း</span>
+        <span>ခရီးဝေး သွားရတတ်သည်။</span>
+    </div>
+
+    <div class="dream-item">
+        <span class="dream-title">ဆင်မြင်ခြင်း</span>
+        <span>ဂုဏ်သိက္ခာ တက်မည်။</span>
+    </div>
+
+    <div class="dream-item">
+        <span class="dream-title">ညောင်ပင်မြင်ခြင်း</span>
+        <span>အေးချမ်းသာယာမှု ရမည်။</span>
+    </div>
+
+    <div class="dream-item">
+        <span class="dream-title">တောင်တက်ခြင်း</span>
+        <span>အောင်မြင်မှု ရရှိမည်။</span>
+    </div>
+
+    <div class="dream-item">
+        <span class="dream-title">ထီးဆောင်းခြင်း</span>
+        <span>အကာအကွယ်ကောင်း ရမည်။</span>
+    </div>
+
+    <div class="dream-item">
+        <span class="dream-title">ဒင်္ဂါးပြားရခြင်း</span>
+        <span>စီးပွားတက်မည်။</span>
+    </div>
 
 </div>
 
-<div id="noResult" class="no-result">🔍 သင်ရှာဖွေသော အိပ်မက် မတွေ့ရှိပါ။</div>
-
 <script>
-    function searchDream() {
-        let filter = document.getElementById('searchBar').value.toLowerCase();
+    function filterDreams() {
+        let input = document.getElementById('search').value.toLowerCase();
         let items = document.getElementsByClassName('dream-item');
-        let sections = document.getElementsByClassName('alphabet-section');
-        let found = false;
-
         for (let i = 0; i < items.length; i++) {
-            if (items[i].innerText.toLowerCase().includes(filter)) {
-                items[i].style.display = "";
-                found = true;
-            } else {
-                items[i].style.display = "none";
-            }
+            items[i].style.display = items[i].innerText.toLowerCase().includes(input) ? "" : "none";
         }
-
-        // Alphabet section တွေကို ဖျောက်/ပြ လုပ်ခြင်း
-        for (let j = 0; j < sections.length; j++) {
-            sections[j].style.display = filter ? "none" : "";
-        }
-
-        document.getElementById('noResult').style.display = found ? "none" : "block";
     }
 </script>
 
