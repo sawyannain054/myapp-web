@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background: #1e2a47; color: white; padding: 20px; margin: 0; }
+        .box { background: rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .phone-display { font-size: 28px; font-weight: bold; color: #f1c40f; margin: 15px 0; letter-spacing: 2px; }
+        .copy-btn { background: #f1c40f; color: #333; padding: 12px 25px; border-radius: 50px; cursor: pointer; font-weight: bold; display: inline-block; }
+        input { width: 80%; padding: 15px; margin: 15px 0; border-radius: 10px; border: none; font-size: 20px; text-align: center; background: #ecf0f1; color: #2c3e50; }
+        .submit-btn { background: #27ae60; color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; display: inline-block; font-weight: bold; margin-top: 10px; transition: 0.3s; }
+        .submit-btn:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <h2>ငွေလွှဲရန်</h2>
+
+    <div class="box">
+        <p>အောက်ပါဖုန်းနံပါတ်ကို Copy ယူပြီး ငွေလွှဲပါ</p>
+        <!-- သင့်ဖုန်းနံပါတ်ကို တစ်ခါတည်း ထည့်ပေးထားပါတယ် -->
+        <div class="phone-display" id="phone-num">09697514209</div> 
+        <div class="copy-btn" onclick="copyNum()">နံပါတ်ကို Copy ယူမည်</div>
+    </div>
+
+    <div class="box">
+        <p>ငွေလွှဲပြီးပါက လုပ်ငန်းစဉ်နံပါတ် <br><b>နောက်ဆုံး ၅ လုံး</b> ကို ရိုက်ထည့်ပါ</p>
+        <input type="number" id="trans-id" placeholder="၁၂၃၄၅" oninput="if(this.value.length > 5) this.value = this.value.slice(0, 5);">
+        <br>
+        <div class="submit-btn" onclick="sendToTele()">အတည်ပြုရန် ပို့မည်</div>
+    </div>
+
+    <script>
+        function copyNum() {
+            const num = document.getElementById('phone-num').innerText;
+            const el = document.createElement('textarea');
+            el.value = num;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            alert("ဖုန်းနံပါတ် " + num + " ကို Copy ယူပြီးပါပြီ။");
+        }
+
+        function sendToTele() {
+            const trans = document.getElementById('trans-id').value;
+            if(trans.length !== 5) {
+                alert("လုပ်ငန်းစဉ်နံပါတ် ၅ လုံး တိကျစွာ ရိုက်ထည့်ပါ");
+                return;
+            }
+            const message = "ငွေလွှဲအတည်ပြုရန် ၅ လုံးနံပါတ်: " + trans;
+            const url = "https://t.me" + encodeURIComponent(message);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

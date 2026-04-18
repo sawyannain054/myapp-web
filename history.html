@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: sans-serif; background: #2c3e50; color: white; margin: 0; padding: 20px; text-align: center; }
+        h2 { color: #f1c40f; margin-bottom: 20px; }
+        .history-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 5px solid #f1c40f;
+        }
+        .date { font-size: 14px; opacity: 0.8; }
+        .number { font-size: 24px; font-weight: bold; color: #fff; }
+        .time-label { font-size: 12px; color: #3498db; }
+    </style>
+</head>
+<body>
+    <h2>2D ထွက်ဂဏန်းမှတ်တမ်း</h2>
+    <div id="history-list">စောင့်ဆိုင်းနေပါ...</div>
+
+    <script>
+        async function fetchHistory() {
+            try {
+                const response = await fetch('https://thaistock2d.com');
+                const data = await response.json();
+                const historyHtml = data.result.map(item => `
+                    <div class="history-card">
+                        <div>
+                            <div class="date">${item.date}</div>
+                            <div class="time-label">${item.open_time}</div>
+                        </div>
+                        <div class="number">${item.twod}</div>
+                    </div>
+                `).join('');
+                document.getElementById('history-list').innerHTML = historyHtml;
+            } catch (e) {
+                document.getElementById('history-list').innerHTML = "မှတ်တမ်းယူ၍မရပါ သို့မဟုတ် ပိတ်ရက်ဖြစ်နေပါသည်";
+            }
+        }
+        fetchHistory();
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: sans-serif; text-align: center; background: #1e3c72; color: white; height: 100vh; display: flex; flex-direction: column; justify-content: center; margin: 0; }
+        .live-number { font-size: 80px; font-weight: bold; background: white; color: #333; padding: 20px; border-radius: 20px; display: inline-block; margin: 20px auto; min-width: 150px; }
+    </style>
+</head>
+<body>
+    <h2>THAI 2D LIVE</h2>
+    <div id="live-box" class="live-number">--</div>
+    <p id="update-time">စောင့်ဆိုင်းနေပါ...</p>
+    <script>
+        async function fetch2D() {
+            try {
+                const response = await fetch('https://thaistock2d.com');
+                const data = await response.json();
+                document.getElementById('live-box').innerText = data.live.twod;
+                document.getElementById('update-time').innerText = "ထွက်ချိန်: " + data.live.time;
+            } catch (e) { document.getElementById('live-box').innerText = "CLOSED"; }
+        }
+        setInterval(fetch2D, 5000); fetch2D();
+    </script>
+</body>
+</html>
