@@ -1,30 +1,14 @@
-
 <!DOCTYPE html>
-<html lang="my">
+<html>
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2D Live Results</title>
     <style>
-        body { font-family: sans-serif; margin: 0; padding: 0; background: #f4f4f4; text-align: center; }
-        .header { background: #d32f2f; color: white; padding: 15px; font-weight: bold; }
-        .live-container { width: 100%; height: 600px; border: none; overflow: hidden; }
-        iframe { width: 100%; height: 100%; border: none; }
-        .refresh-btn { background: #d32f2f; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; display: inline-block; margin-top: 15px; border: none; cursor: pointer; }
+        body { margin: 0; padding: 0; background: #000; }
+        .live-frame { width: 100%; height: 100vh; border: none; }
     </style>
 </head>
 <body>
-
-<div class="header">
-    2D Live ထွက်ဂဏန်းများ
-</div>
-
-<div class="live-container">
-    <!-- ဒီနေရာမှာ အလုပ်လုပ်တဲ့ Live Link တစ်ခုကို Iframe နဲ့ ချိတ်ပေးရပါမယ် -->
-    <iframe src="https://lwinpye.com" allowfullscreen></iframe>
-</div>
-
-<button class="refresh-btn" onclick="location.reload()">Refresh ပြန်လုပ်ရန်</button>
-
+    <!-- Live Link အသစ် (အလုပ်လုပ်သော Link) -->
+    <iframe class="live-frame" src="https://2d-live.com" allowfullscreen></iframe>
 </body>
 </html>
