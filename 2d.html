@@ -1,27 +1,30 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="my">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Live Results</title>
     <style>
-        body { font-family: sans-serif; text-align: center; background: #1e3c72; color: white; height: 100vh; display: flex; flex-direction: column; justify-content: center; margin: 0; }
-        .live-number { font-size: 80px; font-weight: bold; background: white; color: #333; padding: 20px; border-radius: 20px; display: inline-block; margin: 20px auto; min-width: 150px; }
+        body { font-family: sans-serif; margin: 0; padding: 0; background: #f4f4f4; text-align: center; }
+        .header { background: #d32f2f; color: white; padding: 15px; font-weight: bold; }
+        .live-container { width: 100%; height: 600px; border: none; overflow: hidden; }
+        iframe { width: 100%; height: 100%; border: none; }
+        .refresh-btn { background: #d32f2f; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; display: inline-block; margin-top: 15px; border: none; cursor: pointer; }
     </style>
 </head>
 <body>
-    <h2>THAI 2D LIVE</h2>
-    <div id="live-box" class="live-number">--</div>
-    <p id="update-time">စောင့်ဆိုင်းနေပါ...</p>
-    <script>
-        async function fetch2D() {
-            try {
-                const response = await fetch('https://thaistock2d.com');
-                const data = await response.json();
-                document.getElementById('live-box').innerText = data.live.twod;
-                document.getElementById('update-time').innerText = "ထွက်ချိန်: " + data.live.time;
-            } catch (e) { document.getElementById('live-box').innerText = "CLOSED"; }
-        }
-        setInterval(fetch2D, 5000); fetch2D();
-    </script>
+
+<div class="header">
+    2D Live ထွက်ဂဏန်းများ
+</div>
+
+<div class="live-container">
+    <!-- ဒီနေရာမှာ အလုပ်လုပ်တဲ့ Live Link တစ်ခုကို Iframe နဲ့ ချိတ်ပေးရပါမယ် -->
+    <iframe src="https://lwinpye.com" allowfullscreen></iframe>
+</div>
+
+<button class="refresh-btn" onclick="location.reload()">Refresh ပြန်လုပ်ရန်</button>
+
 </body>
 </html>
